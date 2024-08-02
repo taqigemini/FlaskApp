@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-2xl font-bold mb-5">Delete Item</h1>
+    <p class="mb-5">Are you sure you want to delete "{{ item }}"?</p>
+    <form action="{{ url_for('delete', item_id=item_id) }}" method="post" class="bg-white p-6 rounded shadow">
+        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+        <a href="{{ url_for('index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</a>
+    </form>
+{% endblock %}

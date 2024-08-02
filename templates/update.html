@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-2xl font-bold mb-5">Edit Item</h1>
+    <form action="{{ url_for('update', item_id=item_id) }}" method="post" class="bg-white p-6 rounded shadow">
+        <div class="mb-4">
+            <label for="item" class="block text-gray-700 text-sm font-bold mb-2">Item</label>
+            <input type="text" id="item" name="item" value="{{ item }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <button type="submit" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Update</button>
+    </form>
+{% endblock %}
